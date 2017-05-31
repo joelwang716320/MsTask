@@ -1,7 +1,7 @@
 __author__ = 'Administrator'
 import requests
-from tests import requestsData
-from tests import loginResponseData
+from baseData import requestsData
+from baseData import loginResponseData
 
 def askStock():
     """
@@ -18,7 +18,3 @@ def askStock():
     askStockUrl = requestsData.askStockUrl
 
     rep = requests.post(url = askStockUrl,data = askData,verify = False)
-    print rep.status_code
-    print rep.json()
-
-askStock()

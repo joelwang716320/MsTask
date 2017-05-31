@@ -1,8 +1,8 @@
 __author__ = 'Administrator'
 
 import requests
-from tests import loginResponseData
-from tests import requestsData
+from baseData import loginResponseData
+from baseData import requestsData
 
 def liveComment():
     """
@@ -24,8 +24,3 @@ def liveComment():
                    'member_id': member_id,}
     liveComUrl = requestsData.liveCommentUrl
     reLiveCom = requests.post(url = liveComUrl,data = liveComData,verify = False)
-
-    print reLiveCom.status_code
-    print reLiveCom.json()
-
-liveComment()

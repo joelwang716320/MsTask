@@ -1,8 +1,8 @@
 __author__ = 'Administrator'
 
 import requests
-from tests import loginResponseData
-from tests import requestsData
+from baseData import loginResponseData
+from baseData import requestsData
 
 def putQuestion():
     """
@@ -28,8 +28,3 @@ def putQuestion():
     putQuestionUrl = requestsData.putQuestionUrl
 
     rePutQ = requests.post(url = putQuestionUrl,data = putData,verify = False)
-
-    print rePutQ.status_code
-    print rePutQ.json()
-
-putQuestion()
