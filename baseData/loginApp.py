@@ -2,7 +2,7 @@ __author__ = 'Administrator'
 
 import requests
 
-from tests import requestsData
+from baseData import requestsData
 
 
 def loginApp():

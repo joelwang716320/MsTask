@@ -1,6 +1,6 @@
 __author__ = 'Administrator'
 
-from tests import loginApp
+from baseData import loginApp
 
 # login app response info
 loginReData = loginApp.loginApp().json()
