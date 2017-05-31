@@ -1,6 +1,7 @@
 __author__ = 'Administrator'
 
 import json
+import random
 import requests
 from baseData import loginResponseData
 from baseData import requestsData
@@ -10,7 +11,7 @@ def putQuestion():
     Ask the teacher questions about the Live Room
     """
 
-    seller_id = 676
+    seller_id = 3333
     json_stock = ''
     questions = 'test for ask'
     answer_type = 2
@@ -41,12 +42,18 @@ def getLiveStockInfo():
 
     reData =  re.json()
     listStock =  reData["data"]["list"]
-    print len(listStock)
-    for i in range(0,len(listStock)-1):
-        sellId = listStock[i]["seller_id"]
-        seller_id.append(sellId)
+
+    # get seller_id
+    for i in  range(0,1):
+
+        for i in range(0,len(listStock)-1):
+            sellId = listStock[i]["seller_id"]
+            seller_id.append(sellId)
 
         print seller_id
+        randomSellerID = random.sample(seller_id,1)
+
+        return randomSellerID
 
 
 #    print listStock["seller_id"]
