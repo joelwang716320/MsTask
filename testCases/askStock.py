@@ -18,3 +18,5 @@ def askStock():
     askStockUrl = requestsData.askStockUrl
 
     rep = requests.post(url = askStockUrl,data = askData,verify = False)
+
+    print "askStock :=====>%s"%rep.json()

@@ -1,5 +1,6 @@
 __author__ = 'Administrator'
 
+import json
 import requests
 from baseData import loginResponseData
 from baseData import requestsData
@@ -10,7 +11,7 @@ def putQuestion():
     """
 
     seller_id = 676
-    json_stock=''
+    json_stock = ''
     questions = 'test for ask'
     answer_type = 2
     questions_way = 2
@@ -18,7 +19,7 @@ def putQuestion():
     key = loginResponseData.key
     member_id = loginResponseData.member_id
     putData = {'seller_id': seller_id,
-               'json_stock':'',
+               'json_stock': json_stock,
                'questions': questions,
                'answer_type': answer_type,
                'questions_way': questions_way,
@@ -28,3 +29,25 @@ def putQuestion():
     putQuestionUrl = requestsData.putQuestionUrl
 
     rePutQ = requests.post(url = putQuestionUrl,data = putData,verify = False)
+
+    print "askStock :=====>%s"%rePutQ.json()
+
+
+def getLiveStockInfo():
+
+    seller_id = []
+    liveStockUrl = requestsData.liveStockUrl
+    re = requests.get(url = liveStockUrl,verify = False)
+
+    reData =  re.json()
+    listStock =  reData["data"]["list"]
+    print len(listStock)
+    for i in range(0,len(listStock)-1):
+        sellId = listStock[i]["seller_id"]
+        seller_id.append(sellId)
+
+        print seller_id
+
+
+#    print listStock["seller_id"]
+getLiveStockInfo()

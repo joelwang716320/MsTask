@@ -24,3 +24,5 @@ def liveComment():
                    'member_id': member_id,}
     liveComUrl = requestsData.liveCommentUrl
     reLiveCom = requests.post(url = liveComUrl,data = liveComData,verify = False)
+
+    print "askStock :=====>%s"%reLiveCom.json()
