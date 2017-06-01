@@ -6,12 +6,15 @@ import requests
 from baseData import loginResponseData
 from baseData import requestsData
 
+
+SELLER_ID = []    # array of seller_id
+
 def putQuestion():
     """
     Ask the teacher questions about the Live Room
     """
 
-    seller_id = 3333
+    seller_id = random.sample(SELLER_ID,1)   # Remove an SELLER_ID from the array randomly
     json_stock = ''
     questions = 'test for ask'
     answer_type = 2
@@ -36,25 +39,22 @@ def putQuestion():
 
 def getLiveStockInfo():
 
-    seller_id = []
+    global SELLER_ID
     liveStockUrl = requestsData.liveStockUrl
     re = requests.get(url = liveStockUrl,verify = False)
 
     reData =  re.json()
     listStock =  reData["data"]["list"]
 
-    # get seller_id
+    # Get an array of seller_id
+    # seller_type=79    Filter out
     for i in  range(0,1):
 
         for i in range(0,len(listStock)-1):
             sellId = listStock[i]["seller_id"]
-            seller_id.append(sellId)
-
-        print seller_id
-        randomSellerID = random.sample(seller_id,1)
-
-        return randomSellerID
-
+            SELLER_ID.append(sellId)
 
 #    print listStock["seller_id"]
 getLiveStockInfo()
+print SELLER_ID
+print random.sample(SELLER_ID,1)
