@@ -2,6 +2,7 @@ __author__ = 'Administrator'
 
 import random
 import requests
+from baseData import inputData
 from baseData import loginResponseData
 from baseData import requestsData
 from testCases import putQuestions
@@ -15,12 +16,13 @@ def liveComment():
     Live Room review
     """
 
-    message = ['test for live comment oh','teseteye','sdfgsdfgsege']
-    for i in range(0,len(message)-1):
+    liveMessage = inputData
+    MESSAGE = inputData.liveCommentMessage
+    for i in range(0,len(MESSAGE)-1):
         getLiveComment() # init
         liveComData = {'object_id': OBJECT_ID,
                        'type': 3,
-                       'message': message[i],
+                       'message': MESSAGE[i],
                        'pid': 0,
                        'appId': 'android',
                        'key': KEY,
