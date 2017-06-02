@@ -3,6 +3,7 @@ __author__ = 'Administrator'
 import json
 import random
 import requests
+from baseData import inputData
 from baseData import loginResponseData
 from baseData import requestsData
 
@@ -14,9 +15,11 @@ def putQuestion():
     Ask the teacher questions about the Live Room
     """
 
+    getLiveStockInfo()  # init
     seller_id = random.sample(SELLER_ID,1)   # Remove an SELLER_ID from the array randomly
+    putQ = inputData
+    QUESTIONS = putQ.putQuestions
     json_stock = ''
-    questions = 'test for ask'
     answer_type = 2
     questions_way = 2
     appId = 'android'
@@ -24,7 +27,7 @@ def putQuestion():
     member_id = loginResponseData.member_id
     putData = {'seller_id': seller_id,
                'json_stock': json_stock,
-               'questions': questions,
+               'questions': QUESTIONS,
                'answer_type': answer_type,
                'questions_way': questions_way,
                'appId': appId,
@@ -55,6 +58,6 @@ def getLiveStockInfo():
             SELLER_ID.append(sellId)
 
 #    print listStock["seller_id"]
-getLiveStockInfo()
-print SELLER_ID
-print random.sample(SELLER_ID,1)
+# getLiveStockInfo()
+# print SELLER_ID
+# print random.sample(SELLER_ID,1)
