@@ -1,8 +1,8 @@
 f__author__ = 'Administrator'
 
-from testCases import askStock
-from testCases import putQuestions
-from testCases import liveCommentary
+from TestCases import askStock
+from TestCases import putQuestions
+from TestCases import liveCommentary
 
 if __name__ == "__main__":
     askStock.askStock()

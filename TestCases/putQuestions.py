@@ -3,9 +3,9 @@ __author__ = 'Administrator'
 import json
 import random
 import requests
-from baseData import inputData
-from baseData import loginResponseData
-from baseData import requestsData
+from BaseData import inputData
+from BaseData import loginResponseData
+from BaseData import requestsData
 
 
 SELLER_ID = []    # array of seller_id

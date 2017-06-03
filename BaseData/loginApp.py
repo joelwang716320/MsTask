@@ -2,8 +2,8 @@ __author__ = 'Administrator'
 
 import requests
 
-from baseData import requestsData
-from baseData import inputData
+from BaseData import requestsData
+from BaseData import inputData
 
 
 def loginApp():

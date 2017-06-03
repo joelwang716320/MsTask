@@ -1,8 +1,8 @@
 __author__ = 'Administrator'
 import requests
-from baseData import inputData
-from baseData import requestsData
-from baseData import loginResponseData
+from BaseData import inputData
+from BaseData import requestsData
+from BaseData import loginResponseData
 
 def askStock():
     """

@@ -2,10 +2,10 @@ __author__ = 'Administrator'
 
 import random
 import requests
-from baseData import inputData
-from baseData import loginResponseData
-from baseData import requestsData
-from testCases import putQuestions
+from BaseData import inputData
+from BaseData import loginResponseData
+from BaseData import requestsData
+from TestCases import putQuestions
 
 SELLERID = []
 OBJECT_ID = []
