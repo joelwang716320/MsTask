@@ -3,6 +3,7 @@ __author__ = 'Administrator'
 import json
 import random
 import requests
+from TestCases import askStock
 from BaseData import inputData
 from BaseData import loginResponseData
 from BaseData import requestsData
@@ -39,6 +40,8 @@ def putQuestion():
 
     print "askStock :=====>%s"%rePutQ.json()
 
+    return rePutQ
+
 
 def getLiveStockInfo():
 
@@ -61,3 +64,14 @@ def getLiveStockInfo():
 # getLiveStockInfo()
 # print SELLER_ID
 # print random.sample(SELLER_ID,1)
+
+def putQResult():
+    requestCode = putQuestion().status_code
+    massageCode = putQuestion().json()
+    massage = putQuestion().json()
+    util = askStock.testResult()
+    if requestCode == 200 and massageCode == 1:
+        util.add_row(["向老师提问", "Successful", ""])
+        return util
+    else:
+        util.add_row(["向老师提问", "Failed", "requestCode = %s:massage = %s"%(requestCode,massage)])
