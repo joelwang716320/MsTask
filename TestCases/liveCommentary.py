@@ -30,6 +30,16 @@ def liveComment():
         liveComUrl = requestsData.liveCommentUrl
         reLiveCom = requests.post(url = liveComUrl,data = liveComData,verify = False)
 
+        requestCode = reLiveCom.status_code
+        massageCode = reLiveCom.json()
+        massage = reLiveCom.json()
+        util = putQuestions.putQResult()
+        if requestCode == 200 and massageCode == 1:
+            util.add_row(["直播间评论_%s", "Successful", ""]%i)
+            return util
+        else:
+            util.add_row(["直播间评论_%s", "Failed", "requestCode = %s:massage = %s" % (requestCode, massage)]%i)
+
         print "askStock :=====>%s"%reLiveCom.json()
         print OBJECT_ID
 
