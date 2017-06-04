@@ -11,7 +11,7 @@ liveStockUrl = 'https://clb.api.guxiansheng.cn/index.php?c=policy&a=policySeller
 liveCimmentArrayUrl= 'https://clb.api.guxiansheng.cn/index.php?c=policy&a=getPolicyList&v=2.0.1'
 
 #sign
-signUrl = 'https://u.api.guxiansheng.cn/index.php?c=sign&a=check'
+signUrl = 'https://u.api.guxiansheng.cn/index.php?c=sign&a=post'
 #Stock machine
 getObjectID = 'https://clb.api.guxiansheng.cn/index.php?c=plan&a=today_list&v=2.0.1' # curpage=1&pagesize=200&appId=android&key=028c3042883381070b379b643a07dd12&member_id=1131327424
 getHashKey = 'https://trade.api.guxiansheng.cn/index.php?c=buy&a=get&v=1.1' # object_id=85&goods_type=1&appId=android&key=028c3042883381070b379b643a07dd12&member_id=1131327424
