@@ -67,11 +67,11 @@ def getLiveStockInfo():
 
 def putQResult():
     requestCode = putQuestion().status_code
-    massageCode = putQuestion().json()
-    massage = putQuestion().json()
+    messageCode = putQuestion().json()["code"]
+    message = putQuestion().json()["message"]
     util = askStock.testResult()
-    if requestCode == 200 and massageCode == 1:
+    if requestCode == 200 and messageCode == 1:
         util.add_row(["向老师提问", "Successful", ""])
         return util
     else:
-        util.add_row(["向老师提问", "Failed", "requestCode = %s:massage = %s"%(requestCode,massage)])
+        util.add_row(["向老师提问", "Failed", "requestCode = %s:massage = %s"%(requestCode,message)])

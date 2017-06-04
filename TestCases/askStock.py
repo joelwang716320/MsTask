@@ -28,11 +28,11 @@ def askStock():
 
 def testResult():
     requestCode = askStock().status_code
-    massageCode = askStock().json()
-    massage = askStock().json()
+    messageCode = askStock().json()["code"]
+    message = askStock().json()["message"]
     util = utils.myTools()
-    if requestCode == 200 and massageCode == 1:
+    if requestCode == 200 and messageCode == 1:
         util.add_row(["问股", "Successful", ""])
         return util
     else:
-        util.add_row(["问股", "Failed", "requestCode = %s:massage = %s"%(requestCode,massage)])
+        util.add_row(["问股", "Failed", "requestCode = %s:massage = %s"%(requestCode,message)])
