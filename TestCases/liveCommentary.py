@@ -19,7 +19,7 @@ def liveComment():
     """
 
     liveMessage = inputData
-    MESSAGE = inputData.liveCommentMessage
+    MESSAGE = random.sample(liveMessage.commentContent, 3)
     util = putQuestions.putQResult()
     for i in range(0,3):
         getLiveComment() # init
