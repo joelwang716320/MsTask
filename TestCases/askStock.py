@@ -1,6 +1,7 @@
 #coding=utf-8
 __author__ = 'Administrator'
 import requests
+import random
 
 from BaseData import inputData, utils
 from BaseData import requestsData
@@ -15,15 +16,15 @@ def askStock():
     inData = inputData
     key = loginResponseData.key
     member_id = loginResponseData.member_id
-    STOCK_CODE = inData.stock_code
+    STOCK_CODE = random.sample(inData.stock_code, 1)
     ASQuestions = inData.askStockQuestions
-    askData = {'intro':ASQuestions,
-               'key':key,
-               'member_id':member_id,
-               'stock_code':STOCK_CODE}
+    askData = {'intro': ASQuestions,
+               'key': key,
+               'member_id': member_id,
+               'stock_code': STOCK_CODE}
     askStockUrl = requestsData.askStockUrl
 
-    rep = requests.post(url = askStockUrl,data = askData,verify = False)
+    rep = requests.post(url = askStockUrl, data = askData, verify = False)
 
     return rep
 
