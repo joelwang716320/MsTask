@@ -1,3 +1,5 @@
+#coding=utf-8
+
 __author__ = 'Administrator'
 
 import random
@@ -18,7 +20,8 @@ def liveComment():
 
     liveMessage = inputData
     MESSAGE = inputData.liveCommentMessage
-    for i in range(0,len(MESSAGE)-1):
+    util = putQuestions.putQResult()
+    for i in range(0,3):
         getLiveComment() # init
         liveComData = {'object_id': OBJECT_ID,
                        'type': 3,
@@ -33,15 +36,17 @@ def liveComment():
         requestCode = reLiveCom.status_code
         messageCode = reLiveCom.json()["code"]
         message = reLiveCom.json()["message"]
-        util = putQuestions.putQResult()
         if requestCode == 200 and messageCode == 1:
-            util.add_row(["直播间评论_%s", "Successful", ""]%i)
-            return util
+            util.add_row(["直播间评论_%s"%i, "Successful", ""])
+#            return util
         else:
-            util.add_row(["直播间评论_%s", "Failed", "requestCode = %s:massage = %s" % (requestCode, message)]%i)
+            util.add_row(["直播间评论_%s"%i, "Failed", "requestCode = %s:massage = %s" % (requestCode, message)])
+#            return util
 
         print "askStock :=====>%s"%reLiveCom.json()
         print OBJECT_ID
+    print util
+
 
 
 def getLiveComment():
@@ -67,6 +72,3 @@ def getLiveComment():
 
     policyID = reData['data']['policy_list'][0]['policy_id']
     OBJECT_ID = policyID
-
-
-liveComment()

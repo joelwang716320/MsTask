@@ -1,10 +1,11 @@
 #coding=utf-8
 __author__ = 'Administrator'
 import requests
-from BaseData import utils
-from BaseData import inputData
+
+from BaseData import inputData, utils
 from BaseData import requestsData
 from BaseData import loginResponseData
+
 
 def askStock():
     """
@@ -36,3 +37,4 @@ def testResult():
         return util
     else:
         util.add_row(["问股", "Failed", "requestCode = %s:massage = %s"%(requestCode,message)])
+        return util

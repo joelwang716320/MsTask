@@ -1,3 +1,5 @@
+#coding=utf-8
+
 __author__ = 'Administrator'
 
 import json
@@ -75,3 +77,4 @@ def putQResult():
         return util
     else:
         util.add_row(["向老师提问", "Failed", "requestCode = %s:massage = %s"%(requestCode,message)])
+        return util
