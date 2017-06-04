@@ -12,7 +12,7 @@ def loginApp():
 
     loginUrl = requestsData.loginUrl
     loginData = inputData.loginData
-    relogin = requests.post(url = loginUrl,data = loginData)
+    relogin = requests.post(url = loginUrl,data = loginData,verify = False)
 
     if relogin.status_code == 200 and relogin.json()["code"] == 1:
         print "登录成功..."
