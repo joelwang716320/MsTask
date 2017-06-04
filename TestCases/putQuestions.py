@@ -5,7 +5,7 @@ __author__ = 'Administrator'
 import json
 import random
 import requests
-from TestCases import askStock
+from TestCases import signAndStockMachine
 from BaseData import inputData
 from BaseData import loginResponseData
 from BaseData import requestsData
@@ -71,7 +71,7 @@ def putQResult():
     requestCode = putQuestion().status_code
     messageCode = putQuestion().json()["code"]
     message = putQuestion().json()["message"]
-    util = askStock.testResult()
+    util = signAndStockMachine.sign()
     if requestCode == 200 and messageCode == 1:
         util.add_row(["向老师提问", "Successful", ""])
         return util
