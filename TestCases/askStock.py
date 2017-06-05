@@ -16,7 +16,7 @@ def askStock():
     inData = inputData
     key = loginResponseData.key
     member_id = loginResponseData.member_id
-    STOCK_CODE = random.sample(inData.stock_code, 1)
+    STOCK_CODE = random.sample(inData.stock_code, 1)[0]
     ASQuestions = inData.askStockQuestions
     askData = {'intro': ASQuestions,
                'key': key,
